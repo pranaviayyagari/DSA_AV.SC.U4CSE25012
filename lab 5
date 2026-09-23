@@ -1,0 +1,41 @@
+class ArrayStack:
+    def __init__(self):
+        self.stack = []
+
+    def push(self, item):
+        self.stack.append(item)
+        print(f"Pushed {item} into stack")
+
+    def pop(self):
+        if not self.is_empty():
+            item = self.stack.pop()
+            print(f"Popped {item} from stack")
+            return item
+        else:
+            print("Stack is empty! Cannot pop.")
+            return None
+
+    def peek(self):
+        if not self.is_empty():
+            return self.stack[-1]
+        else:
+            print("Stack is empty! Nothing to peek.")
+            return None
+
+    def display(self):
+        print("Stack elements:", self.stack)
+
+    def is_empty(self):
+        return len(self.stack) == 0
+
+
+# Example usage
+print("=== Array Stack ===")
+array_stack = ArrayStack()
+array_stack.push(10)
+array_stack.push(20)
+array_stack.push(30)
+array_stack.display()
+print("Peek:", array_stack.peek())
+array_stack.pop()
+array_stack.display()
